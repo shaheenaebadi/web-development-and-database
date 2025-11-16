@@ -1,16 +1,27 @@
-/* Base styles */
-body {
-    font-family: Arial, sans-serif;
+/* Reset some defaults for cleaner layout */
+* {
+    box-sizing: border-box;
     margin: 0;
-    background: #f8f9fa;
-    color: #222;
-}
-header {
-    background: #842d53;
-    color: #fff;
-    padding: 1em 0;
+    padding: 0;
 }
 
+/* Body styles */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #e0f7fa; /* very light teal */
+    color: #113a5d;      /* dark blue for text */
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background: #0097a7; /* teal blue */
+    color: #fff;
+    padding: 1em 0;
+    box-shadow: 0 2px 8px rgba(0, 151, 167, 0.06);
+}
+
+/* Navigation styles */
 nav ul {
     list-style: none;
     display: flex;
@@ -24,32 +35,70 @@ nav a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-}
-nav a:hover {
-    text-decoration: underline;
+    padding: 0.3em 0.8em;
+    border-radius: 5px;
+    transition: background 0.2s, color 0.2s;
 }
 
+nav a:hover,
+nav a:focus {
+    background: #80deea; /* lighter teal */
+    color: #006064;      /* deep teal */
+}
+
+/* Main content styles */
 main {
     padding: 2em;
     text-align: center;
 }
 
+/* Headings */
+h1 {
+    color: #006064; /* deep teal */
+    margin-bottom: 0.8em;
+}
+
+ul {
+    margin: 1em auto;
+    max-width: 28em;
+    text-align: left;
+}
+
+/* Image styles */
 img {
     width: 80%;
     max-width: 600px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+    margin-top: 1em;
 }
 
 footer {
-    background: #222;
+    background: #006064;
     color: #fff;
     text-align: center;
     padding: 1em 0;
     font-size: 0.9em;
+    margin-top: 2em;
 }
 
-/* Responsive Design */
+/* Button styles (optional; use if you have buttons) */
+button, .btn {
+    background: #0097a7;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1.2em;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+button:hover, .btn:hover {
+    background: #80deea;
+    color: #006064;
+}
+
+/* Responsive Design: Tablet */
 @media (max-width: 900px) {
     nav ul {
         gap: 1em;
@@ -57,20 +106,31 @@ footer {
     img {
         width: 95%;
     }
+    main {
+        padding: 1.2em;
+    }
 }
 
+/* Responsive Design: Mobile */
 @media (max-width: 600px) {
     header, footer {
         padding: 0.5em 0;
     }
     main {
-        padding: 1em;
+        padding: 0.5em;
     }
     nav ul {
         flex-direction: column;
-        gap: 0.5em;
+        gap: 0.4em;
+        align-items: center;
+    }
+    nav a {
+        font-size: 1.08em;
+        width: 100%;
+        text-align: center;
     }
     img {
         width: 100%;
+        margin-top: 0.7em;
     }
 }
